@@ -79,3 +79,8 @@ Desktop.ini
 *.log
 *.bak
 temp*.md
+
+# Practice 02 test files
+practice-02-events/test/node_modules/
+practice-02-events/test/results.json
+practice-02-events/test/results/
