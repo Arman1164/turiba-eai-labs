@@ -84,3 +84,12 @@ temp*.md
 practice-02-events/test/node_modules/
 practice-02-events/test/results.json
 practice-02-events/test/results/
+practice-03-api_orchestration_and_composition/INSTRUCTOR.md
+
+# Practice 03 generated outputs (npm/test/grade runs)
+practice-03-api_orchestration_and_composition/test/node_modules/
+practice-03-api_orchestration_and_composition/test/results.json
+practice-03-api_orchestration_and_composition/grade-report.md
+practice-03-api_orchestration_and_composition/**/build/
+practice-03-api_orchestration_and_composition/**/dist/
+practice-03-api_orchestration_and_composition/instructor-only/

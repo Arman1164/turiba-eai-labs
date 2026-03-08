@@ -1,0 +1,76 @@
+{
+  "sagas": {
+    "ord-happy-001": {
+      "idempotencyKey": "idem-happy-001",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-08T16:56:35.044Z"
+    },
+    "ord-pay-fail-001": {
+      "idempotencyKey": "idem-pay-fail-001-1772988995222",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-08T16:56:35.238Z"
+    },
+    "ord-inv-fail-001": {
+      "idempotencyKey": "idem-comp-fail-1772988995834",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-08T16:56:35.845Z"
+    },
+    "ord-ship-timeout-001": {
+      "idempotencyKey": "idem-ship-timeout-001-1772988995626",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-08T16:56:35.640Z"
+    },
+    "ord-replay-001": {
+      "idempotencyKey": "idem-replay-001-1772988996027",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-08T16:56:36.035Z"
+    },
+    "ord-mismatch-001": {
+      "idempotencyKey": "idem-mismatch-001-1772988996214",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-08T16:56:36.230Z"
+    },
+    "ord-trace-1772988996418": {
+      "idempotencyKey": "idem-trace-1772988996418",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-08T16:56:36.431Z"
+    },
+    "ord-stress-0-1772988996605": {
+      "idempotencyKey": "idem-stress-0-1772988996605",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-08T16:56:36.612Z"
+    },
+    "ord-stress-1-1772988996615": {
+      "idempotencyKey": "idem-stress-1-1772988996615",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-08T16:56:36.621Z"
+    },
+    "ord-stress-2-1772988996625": {
+      "idempotencyKey": "idem-stress-2-1772988996625",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-08T16:56:36.633Z"
+    },
+    "ord-stress-3-1772988996636": {
+      "idempotencyKey": "idem-stress-3-1772988996636",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-08T16:56:36.644Z"
+    },
+    "ord-stress-4-1772988996647": {
+      "idempotencyKey": "idem-stress-4-1772988996647",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-08T16:56:36.655Z"
+    }
+  }
+}

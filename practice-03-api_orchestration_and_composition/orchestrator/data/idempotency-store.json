@@ -1,0 +1,173 @@
+{
+  "records": {
+    "idem-happy-001": {
+      "requestHash": "sha256:710f376a70918cd880779ff5e2113ee820aa39242069a8ccc9bf89bfe978b674",
+      "state": "failed",
+      "httpStatus": 422,
+      "response": {
+        "orderId": "ord-happy-001",
+        "status": "failed",
+        "code": "not_implemented",
+        "message": "Implement orchestration logic in orchestrator/server.js",
+        "trace": []
+      },
+      "updatedAt": "2026-03-08T16:56:35.045Z"
+    },
+    "idem-pay-fail-001-1772988995222": {
+      "requestHash": "sha256:ff418e70aeb9f7dbe3942dc5cbb0af3b1282dc6c68dd648d06da2b75fdefc1ab",
+      "state": "failed",
+      "httpStatus": 422,
+      "response": {
+        "orderId": "ord-pay-fail-001",
+        "status": "failed",
+        "code": "not_implemented",
+        "message": "Implement orchestration logic in orchestrator/server.js",
+        "trace": []
+      },
+      "updatedAt": "2026-03-08T16:56:35.240Z"
+    },
+    "idem-inv-fail-001-1772988995425": {
+      "requestHash": "sha256:cbc521b22a688d49033ba30d96e527f25283b0e9d4c753a1e4d5016d1e5df77e",
+      "state": "failed",
+      "httpStatus": 422,
+      "response": {
+        "orderId": "ord-inv-fail-001",
+        "status": "failed",
+        "code": "not_implemented",
+        "message": "Implement orchestration logic in orchestrator/server.js",
+        "trace": []
+      },
+      "updatedAt": "2026-03-08T16:56:35.437Z"
+    },
+    "idem-ship-timeout-001-1772988995626": {
+      "requestHash": "sha256:20746b03ea536f75131f4ce0cd1c1d907e8c5bf1cbd1ee47107f2de78f26baa4",
+      "state": "failed",
+      "httpStatus": 422,
+      "response": {
+        "orderId": "ord-ship-timeout-001",
+        "status": "failed",
+        "code": "not_implemented",
+        "message": "Implement orchestration logic in orchestrator/server.js",
+        "trace": []
+      },
+      "updatedAt": "2026-03-08T16:56:35.646Z"
+    },
+    "idem-comp-fail-1772988995834": {
+      "requestHash": "sha256:cbc521b22a688d49033ba30d96e527f25283b0e9d4c753a1e4d5016d1e5df77e",
+      "state": "failed",
+      "httpStatus": 422,
+      "response": {
+        "orderId": "ord-inv-fail-001",
+        "status": "failed",
+        "code": "not_implemented",
+        "message": "Implement orchestration logic in orchestrator/server.js",
+        "trace": []
+      },
+      "updatedAt": "2026-03-08T16:56:35.848Z"
+    },
+    "idem-replay-001-1772988996027": {
+      "requestHash": "sha256:ea9e1d1a825239f599c99ed0df3a83c0e099f8ec3aec4935d42828379943043c",
+      "state": "failed",
+      "httpStatus": 422,
+      "response": {
+        "orderId": "ord-replay-001",
+        "status": "failed",
+        "code": "not_implemented",
+        "message": "Implement orchestration logic in orchestrator/server.js",
+        "trace": []
+      },
+      "updatedAt": "2026-03-08T16:56:36.036Z"
+    },
+    "idem-mismatch-001-1772988996214": {
+      "requestHash": "sha256:662485b667f22ec6862d9e9493be38a5faf432bfbbd60d1b65762367019de8f9",
+      "state": "failed",
+      "httpStatus": 422,
+      "response": {
+        "orderId": "ord-mismatch-001",
+        "status": "failed",
+        "code": "not_implemented",
+        "message": "Implement orchestration logic in orchestrator/server.js",
+        "trace": []
+      },
+      "updatedAt": "2026-03-08T16:56:36.232Z"
+    },
+    "idem-trace-1772988996418": {
+      "requestHash": "sha256:fc4f97c54d92b732f93e8a4af8c1e87943c2f3bf949b2f0f67f4c350161ef4cc",
+      "state": "failed",
+      "httpStatus": 422,
+      "response": {
+        "orderId": "ord-trace-1772988996418",
+        "status": "failed",
+        "code": "not_implemented",
+        "message": "Implement orchestration logic in orchestrator/server.js",
+        "trace": []
+      },
+      "updatedAt": "2026-03-08T16:56:36.433Z"
+    },
+    "idem-stress-0-1772988996605": {
+      "requestHash": "sha256:4d690779e87b22fe770a2b7ddc8afb28941bb181f5f7a5d8f0549078131176e5",
+      "state": "failed",
+      "httpStatus": 422,
+      "response": {
+        "orderId": "ord-stress-0-1772988996605",
+        "status": "failed",
+        "code": "not_implemented",
+        "message": "Implement orchestration logic in orchestrator/server.js",
+        "trace": []
+      },
+      "updatedAt": "2026-03-08T16:56:36.614Z"
+    },
+    "idem-stress-1-1772988996615": {
+      "requestHash": "sha256:01c6757bce51795fe61fcbd61823be49c4cb6456f19fbc2dafcca4c7f71e841c",
+      "state": "failed",
+      "httpStatus": 422,
+      "response": {
+        "orderId": "ord-stress-1-1772988996615",
+        "status": "failed",
+        "code": "not_implemented",
+        "message": "Implement orchestration logic in orchestrator/server.js",
+        "trace": []
+      },
+      "updatedAt": "2026-03-08T16:56:36.623Z"
+    },
+    "idem-stress-2-1772988996625": {
+      "requestHash": "sha256:9a0337d6a2bc055e0767fb13db1c54c5c5b668e7c68714f284394f5e49d3a7c9",
+      "state": "failed",
+      "httpStatus": 422,
+      "response": {
+        "orderId": "ord-stress-2-1772988996625",
+        "status": "failed",
+        "code": "not_implemented",
+        "message": "Implement orchestration logic in orchestrator/server.js",
+        "trace": []
+      },
+      "updatedAt": "2026-03-08T16:56:36.634Z"
+    },
+    "idem-stress-3-1772988996636": {
+      "requestHash": "sha256:e3f70bf941f4ebb2af1a1b25d1c89a9cc271b246cda5f80a058d552c25f7d750",
+      "state": "failed",
+      "httpStatus": 422,
+      "response": {
+        "orderId": "ord-stress-3-1772988996636",
+        "status": "failed",
+        "code": "not_implemented",
+        "message": "Implement orchestration logic in orchestrator/server.js",
+        "trace": []
+      },
+      "updatedAt": "2026-03-08T16:56:36.645Z"
+    },
+    "idem-stress-4-1772988996647": {
+      "requestHash": "sha256:33b9d795c9a884cd12405821c2bd2700e3a003cf831e1ec53195e765c2402fc2",
+      "state": "failed",
+      "httpStatus": 422,
+      "response": {
+        "orderId": "ord-stress-4-1772988996647",
+        "status": "failed",
+        "code": "not_implemented",
+        "message": "Implement orchestration logic in orchestrator/server.js",
+        "trace": []
+      },
+      "updatedAt": "2026-03-08T16:56:36.657Z"
+    }
+  }
+}
