@@ -1,6 +1,6 @@
 FROM nodered/node-red:latest
 
 # Pre-install palette nodes so students can use them without manual palette management:
-#   node-red-node-amqp  — AMQP/RabbitMQ nodes (amqp-in, amqp-out) for bonus RabbitMQ integration
-#   node-red-contrib-xml — XML parsing nodes for B2B order transformation
-RUN npm install node-red-node-amqp node-red-contrib-xml
+#   node-red-contrib-amqp — AMQP/RabbitMQ nodes (amqp-in, amqp-out) for bonus RabbitMQ integration
+#   node-red-contrib-xml  — XML parsing nodes for B2B order transformation
+RUN npm install node-red-contrib-amqp node-red-contrib-xml

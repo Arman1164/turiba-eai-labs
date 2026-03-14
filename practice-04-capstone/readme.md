@@ -206,7 +206,7 @@ You must implement and **demonstrate** at least 2 failure scenarios:
 ```bash
 # 1. Clone your repo and enter it
 git clone <your-repo-url>
-cd capstone-integration
+cd practice-04-capstone
 
 # 2. Copy port configuration
 cp .env.example .env
