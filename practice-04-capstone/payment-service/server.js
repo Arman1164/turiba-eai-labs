@@ -1,18 +1,6 @@
 /**
  * Payment Service
- *
- * YOU MUST IMPLEMENT the TODO sections below.
- *
- * This service handles payment authorization and refunds.
- * It is called by your Node-RED orchestration flow (or Order Service).
- *
- * Behaviour is controlled by PAYMENT_FAIL_MODE environment variable:
- *   never  — always authorize successfully
- *   always — always reject (useful for testing compensation logic)
- *   random — 20% rejection rate (useful for stress testing)
- *
- * The /admin endpoints are used by the instructor's grading session.
- * Do not remove them, but you do not need to document them in your README.
+ * * IMPLEMENTATION COMPLETED
  */
 
 const express = require('express');
@@ -21,89 +9,97 @@ const { v4: uuidv4 } = require('uuid');
 const app = express();
 app.use(express.json());
 
-// ─────────────────────────────────────────────
+
 // Configuration — loaded from environment
-// ─────────────────────────────────────────────
+
 const PORT = process.env.PORT || 3002;
 
-// Controls whether payments succeed or fail:
-//   'never'  — payments always succeed
-//   'always' — payments always fail (useful for compensation testing)
-//   'random' — 20% of payments fail
+// Controls whether payments succeed or fail
 const PAYMENT_FAIL_MODE = process.env.PAYMENT_FAIL_MODE || 'never';
 
-// ─────────────────────────────────────────────
+
 // In-memory call log (used by /admin/logs)
-// Tracks every authorize and refund call made to this service.
-// ─────────────────────────────────────────────
+
 const callLog = [];
 
-// ─────────────────────────────────────────────
+
 // Health check — provided, do not change
-// ─────────────────────────────────────────────
+
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', service: 'payment-service' });
 });
 
-// ─────────────────────────────────────────────
+
 // POST /payment/authorize
-//
-// Validates a payment for an incoming order.
-//
-// Request body should include at minimum:
-//   { orderId, correlationId, amount, currency }
-//
-// The correlationId may also arrive in the X-Correlation-Id header.
-// Your implementation should check both places.
-//
-// Expected responses:
-//   Success: HTTP 200 { status: "authorized", transactionId: "<uuid>", correlationId }
-//   Failure: HTTP 422 { status: "rejected", reason: "Payment declined", correlationId }
-//
-// TODO: Implement this endpoint
-//   1. Extract correlationId from body or X-Correlation-Id header
-//   2. Log the call to callLog: { endpoint: '/payment/authorize', correlationId, orderId, timestamp }
-//   3. Decide success/failure based on PAYMENT_FAIL_MODE:
-//        'never'  → always succeed
-//        'always' → always reject (return HTTP 422)
-//        'random' → Math.random() < 0.2 → reject
-//   4. On success: return HTTP 200 with { status: 'authorized', transactionId: uuidv4(), correlationId }
-//   5. On failure: return HTTP 422 with { status: 'rejected', reason: 'Payment declined', correlationId }
-// ─────────────────────────────────────────────
+
 app.post('/payment/authorize', (req, res) => {
-  // TODO: implement payment authorization
-  res.status(501).json({ error: 'Not implemented' });
+  // 1. Извлекаем correlationId из тела или заголовка (EIP: Correlation Identifier)
+  const correlationId = req.body.correlationId || req.get('X-Correlation-Id');
+  const { orderId } = req.body;
+
+  // 2. Логируем вызов для административного интерфейса
+  callLog.push({
+    endpoint: '/payment/authorize',
+    correlationId,
+    orderId,
+    timestamp: new Date().toISOString()
+  });
+
+  // 3. Логика определения успеха/ошибки (Failure Scenarios)
+  let shouldFail = false;
+  if (PAYMENT_FAIL_MODE === 'always') {
+    shouldFail = true;
+  } else if (PAYMENT_FAIL_MODE === 'random') {
+    shouldFail = Math.random() < 0.2;
+  }
+
+  // 4. Обработка результата
+  if (shouldFail) {
+    console.log(`[payment-service] REJECTED: Order ${orderId} | Mode: ${PAYMENT_FAIL_MODE}`);
+    return res.status(422).json({ 
+      status: "rejected", 
+      reason: "Payment declined", 
+      correlationId 
+    });
+  }
+
+  // 5. Успешный ответ
+  console.log(`[payment-service] AUTHORIZED: Order ${orderId}`);
+  res.status(200).json({ 
+    status: "authorized", 
+    transactionId: uuidv4(), 
+    correlationId 
+  });
 });
 
-// ─────────────────────────────────────────────
+
 // POST /payment/refund
-//
-// Reverses a previously authorized payment.
-// Called by your compensation logic when a downstream step fails.
-//
-// Request body should include at minimum:
-//   { orderId, correlationId, transactionId }
-//
-// Expected response:
-//   HTTP 200 { status: "refunded", correlationId }
-//
-// TODO: Implement this endpoint
-//   1. Extract correlationId from body or X-Correlation-Id header
-//   2. Log the call to callLog: { endpoint: '/payment/refund', correlationId, orderId, timestamp }
-//   3. Return HTTP 200 { status: 'refunded', correlationId }
-//
-// Note: For this practice, refunds always succeed.
-// In a real system you would look up the transactionId and reverse it.
-// ─────────────────────────────────────────────
+
 app.post('/payment/refund', (req, res) => {
-  // TODO: implement payment refund
-  res.status(501).json({ error: 'Not implemented' });
+  // 1. Извлекаем correlationId
+  const correlationId = req.body.correlationId || req.get('X-Correlation-Id');
+  const { orderId } = req.body;
+
+  // 2. Логируем вызов (важно для проверки компенсации)
+  callLog.push({
+    endpoint: '/payment/refund',
+    correlationId,
+    orderId,
+    timestamp: new Date().toISOString()
+  });
+
+  console.log(`[payment-service] REFUNDED: Order ${orderId} | Correlation: ${correlationId}`);
+
+  // 3. Возврат всегда успешен в рамках данного задания
+  res.status(200).json({ 
+    status: "refunded", 
+    correlationId 
+  });
 });
 
-// ─────────────────────────────────────────────
-// Admin endpoints — used by instructor grading session
-// Do not remove. Do not document in your student README.
-// ─────────────────────────────────────────────
+
+// Admin endpoints — do not remove
+
 
 app.get('/admin/logs', (req, res) => {
   res.json(callLog);
